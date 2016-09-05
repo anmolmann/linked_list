@@ -1,0 +1,13 @@
+Node* Reverse(Node* head)
+{
+    Node *temp = head, *ptr1 = NULL, *ptr2 = NULL;
+    while(temp) {
+        ptr2 = ptr1;
+        ptr1 = temp;
+        temp = temp -> next;
+        ptr1 -> next = ptr2;
+        ptr1 -> prev = temp;
+    }
+
+    return ptr1;
+}
